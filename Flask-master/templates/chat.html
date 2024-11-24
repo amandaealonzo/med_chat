@@ -1,0 +1,74 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<div class="tab-panel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Chat</a></li>
+    <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Instructions</a></li>
+    <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">About</a></li>
+    <li role="presentation"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Resources</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+   
+    <div role="tabpanel" class="tab-pane active"  id="home">
+    <h2>Chat </h2>
+    <p>Hi! Enter your question:  </p>
+    <form name="chatform" action="/chat/" method="POST"> 
+    <input type="text" name="t1">
+    <input type="submit">
+    </form> 
+  <hr>
+  <table> 
+    <tr> <td> 
+    <p>       {{ user_question }}    </p> 
+  </td></tr>
+  <tr><td> 
+    <p>       {{ bot_answer }}    </p> 
+  </td></tr>
+  </table>
+  </div>
+
+  <div role="tabpanel" class="tab-pane" id="tab2">    
+    <h2>Welcome to Medical Q&A Chat!</h2>
+    <table cellpadding="4" align="center" width="95%" border =0>
+      <tr><td size="15" color="blue"></td></tr>
+      <tr><td align="center">
+        <ul> 
+        <li>Please ask the chat any medical related questions you may have.</li>
+        <li>Some suggested topics are: diabetes, Chrons disease, vaccines, medicare.</li>
+        <li><i>Please remember this is for general information and should not be used for specific medical advice.</li></p>
+      </ul>
+      </td></tr>
+      <tr><td size="12" align="center" width="100%">Ready to try?<br>
+        <br> 
+       Click "Chat" in menu above.
+    </table>       
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="tab3">
+    
+     <h2>About </h2>
+    <p>This webapp is created by Amanda Alonzo, Ed Zarek, and Wade Lail</p>    
+    <p>Fall 2024 Intro to Natural Language Processing (NLP)</p>   
+    <p>Indiana University</p>   
+    <p> Data Science Program</p>
+    </div>
+ 
+
+    <div role="tabpanel" class="tab-pane" id="tab4">    
+    <h2>Resources </h2>
+    <p> Coming soon </p>    
+    </div>
+
+  </div>
+
+</div>
+
+
+
+{% endblock %} 
